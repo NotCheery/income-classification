@@ -2,12 +2,21 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)
-![Status](https://img.shields.io/badge/Status-Active-success)
 
 ## 📌 Overview
-This project leverages machine learning to analyze census data and predict financial demographics. Specifically, it uses **Logistic Regression** to classify whether an individual earns **> $50k/year** based on features like age, education, occupation, and capital gain.
+This project leverages machine learning to analyze census data and predict financial demographics. The core objective is to build a robust pipeline that processes raw census data to classify whether an individual earns **> $50k/year** based on features like education, occupation, and capital gain.
 
-The goal is to build a robust pipeline that processes raw census data and outputs binary classifications with high accuracy.
+### ❓ Why Logistic Regression?
+We selected **Logistic Regression** as the primary model for this task because:
+* **Binary Nature:** The target variable is strictly binary (High Income vs. Low Income), which is the ideal use case for this algorithm.
+* **Interpretability:** Unlike "black box" models (like Neural Networks), Logistic Regression allows us to clearly see which features (e.g., *Years of Education*) have the strongest positive or negative correlation with income.
+* **Probability Scores:** It outputs a probability (0-100%) rather than just a hard label, allowing for adjustable thresholding based on business needs.
+
+### 💼 Business Value
+Predicting income brackets from demographic data has significant real-world applications:
+* **Targeted Marketing:** Companies can optimize ad spend by identifying high-potential customers for premium products or financial services.
+* **Resource Allocation:** Non-profits and government agencies can better identify under-served demographics to distribute aid or educational resources effectively.
+* **Risk Assessment:** Financial institutions can use these demographic markers as part of preliminary credit scoring or loan eligibility models.
 
 ## 📂 Dataset
 * **Source:** U.S. Census Bureau (commonly known as the "Adult" dataset).
@@ -48,10 +57,11 @@ The model is evaluated using:
     git clone https://github.com/NotCheery/income-classification.git
     cd income_prediction
     ```
-2.  **Install dependencies:**
-    ```bash
-    pip install pandas numpy scikit-learn matplotlib
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
     ```
+    
 3.  **Launch the Notebook:**
     ```bash
     jupyter notebook
